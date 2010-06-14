@@ -4,6 +4,10 @@ This gem is part of the [server-blender](http://astrails.com/opensource/server-b
 
 It contains server-side root manifest implementation for blender recipes. See server-blender for more information.
 
+* Home: [http://astrails.com/opensource/server-blender](http://astrails.com/opensource/server-blender)
+* Code: [http://github.com/astrails/server-blender-manifest](http://github.com/astrails/server-blender-manifest)
+* Blog: [http://blog.astrails.com/server-blender](http://blog.astrails.com/server-blender)
+
 ## Note on Patches/Pull Requests
  
 * Fork the project.
