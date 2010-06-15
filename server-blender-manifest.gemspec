@@ -26,6 +26,7 @@ It contains server-side root manifest implementation for blender recipes. See se
      "README.markdown",
      "Rakefile",
      "VERSION",
+     "bin/blender-mix-recipe",
      "lib/blender/manifest/init.rb",
      "lib/blender/manifest/mixer.rb",
      "lib/blender/manifest/nodes.rb",
