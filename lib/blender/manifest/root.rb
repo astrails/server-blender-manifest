@@ -1,14 +1,14 @@
 require 'ruby-debug'
-$: << File.dirname(__FILE__) # FIXME: remove?
 
 module Blender
   module Manifest; end
   module Recipes; end
 end
-require 'init'
-require 'nodes'
-require 'roles'
-require 'mixer'
+
+require 'blender/manifest/init'
+require 'blender/manifest/nodes'
+require 'blender/manifest/roles'
+require 'blender/manifest/mixer'
 
 class Root < ::ShadowPuppet::Manifest
   include Blender::Manifest::Init
@@ -34,5 +34,5 @@ include Blender::Manifest::Mixer
 # "project" recipe directory
 $: << "recipes"
 
-# add all libs in the ./vendor directory to the path
-$:.concat Dir["vendor/recipes/*/lib"]
+# add all libs in the ./cookbook directory to the path
+$:.concat Dir["cookbook/*/recipes"]

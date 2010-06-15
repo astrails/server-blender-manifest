@@ -10,12 +10,10 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Vitaly Kushner"]
   s.date = %q{2010-06-15}
-  s.default_executable = %q{blender-mix-recipe}
   s.description = %q{This gem is part of the server-blender family (http://astrails.com/opensource/server-blender)
 It contains server-side root manifest implementation for blender recipes. See server-blender for more information.
 }
   s.email = %q{vitaly@astrails.com}
-  s.executables = ["blender-mix-recipe"]
   s.extra_rdoc_files = [
     "LICENSE",
      "README.markdown"
@@ -26,7 +24,7 @@ It contains server-side root manifest implementation for blender recipes. See se
      "README.markdown",
      "Rakefile",
      "VERSION",
-     "bin/blender-mix-recipe",
+     "lib/blender/manifest.rb",
      "lib/blender/manifest/init.rb",
      "lib/blender/manifest/mixer.rb",
      "lib/blender/manifest/nodes.rb",
