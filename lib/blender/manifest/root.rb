@@ -35,4 +35,4 @@ include Blender::Manifest::Mixer
 $: << "recipes"
 
 # add all libs in the ./vendor directory to the path
-$:.concat Dir["vendor/recipes/*/"]
+$:.concat Dir["vendor/recipes/*/lib"]
