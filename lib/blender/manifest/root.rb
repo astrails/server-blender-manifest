@@ -31,8 +31,8 @@ end
 
 include Blender::Manifest::Mixer
 
-# "standard" recipe directories
-$: << "recipes" << "recipes/astrails" << "lib/astrails/blender/recipes"
+# "project" recipe directory
+$: << "recipes"
 
 # add all libs in the ./vendor directory to the path
-$:.concat Dir["vendor/*/"]
+$:.concat Dir["vendor/recipes/*/"]

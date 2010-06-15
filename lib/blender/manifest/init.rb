@@ -10,9 +10,12 @@ module Blender::Manifest::Init
   def create_blender_directories
     @create_blender_directories ||=
       begin
-        dep = directory "/var/lib/blender", :mode => 0700
-        dep = directory "/var/lib/blender/logs", :require => dep
-        dep = directory "/var/lib/blender/tmp", :require => dep
+        file name = "/var/lib/blender", :owner => "root", :mode => 0700
+        dep = file(name)
+        file name = "/var/lib/blender/logs", :owner => "root", :mode => 0755, :require => dep
+        dep = file(name)
+        file name = "/var/lib/blender/tmp", :owner => "root", :mode => 0755, :require => dep
+        dep = file(name)
       end
   end
 

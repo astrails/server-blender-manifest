@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+
+system "shadow_puppet", File.expand_path("../../lib/blender/manifest/root.rb", __FILE__)
