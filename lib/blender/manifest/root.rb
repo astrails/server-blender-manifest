@@ -30,7 +30,7 @@ class Root < ::ShadowPuppet::Manifest
     # next load OS specific recipe. This gives user's recipe
     # the opportunity to redefine it if needed
     _os = os.downcase
-    unless defined?(_os)
+    unless respond_to?(_os)
       mix _os
     end
     send _os
