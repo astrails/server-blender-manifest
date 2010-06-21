@@ -23,17 +23,16 @@ class Root < ::ShadowPuppet::Manifest
   def execute_user_recipe
     raise "no RECIPE to execute" unless recipe = ENV['RECIPE']
 
-    # first load user's recipe
-    code = open(recipe).read
-    instance_eval(code, recipe)
-
-    # next load OS specific recipe. This gives user's recipe
-    # the opportunity to redefine it if needed
+    # load OS specific recipe.
     _os = os.downcase
     unless respond_to?(_os)
       mix _os
     end
     send _os
+
+    # load user's recipe
+    code = open(recipe).read
+    instance_eval(code, recipe)
 
   end
   recipe :execute_user_recipe
