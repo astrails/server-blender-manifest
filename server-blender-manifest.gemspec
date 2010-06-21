@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{server-blender-manifest}
-  s.version = "0.0.12"
+  s.version = "0.0.13"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Vitaly Kushner"]
-  s.date = %q{2010-06-17}
+  s.date = %q{2010-06-21}
   s.description = %q{This gem is part of the server-blender family (http://astrails.com/opensource/server-blender)
 It contains server-side root manifest implementation for blender recipes. See server-blender for more information.
 }
