@@ -2,7 +2,9 @@ require 'ruby-debug'
 
 module Blender
   module Manifest; end
-  module Recipes; end
+  module Recipes
+    module Os; end
+  end
 end
 
 require 'blender/manifest/init'
@@ -24,7 +26,7 @@ class Root < ::ShadowPuppet::Manifest
     raise "no RECIPE to execute" unless recipe = ENV['RECIPE']
 
     # load OS specific recipe.
-    _os = os.downcase
+    _os = Facter.value(:operatingsystem).downcase
     unless respond_to?(_os)
       mix "os/#{_os}"
     end
