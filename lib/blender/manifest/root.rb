@@ -26,7 +26,7 @@ class Root < ::ShadowPuppet::Manifest
     # load OS specific recipe.
     _os = os.downcase
     unless respond_to?(_os)
-      mix _os
+      mix "os/#{_os}"
     end
     send _os
 
