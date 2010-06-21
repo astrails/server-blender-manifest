@@ -18,9 +18,4 @@ module Blender::Manifest::Init
         dep = file(name)
       end
   end
-
-  # @return dependency for blender directories
-  def builder_deps
-    create_blender_directories
-  end
 end
