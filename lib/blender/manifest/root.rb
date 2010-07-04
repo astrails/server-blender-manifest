@@ -1,5 +1,6 @@
 require 'ruby-debug'
 require 'shadow_puppet'
+require 'puppet/darwinport_fix'
 
 module Blender
   module Manifest; end
@@ -46,10 +47,6 @@ class Root < ::ShadowPuppet::Manifest
     # load user's recipe
     code = open(recipe).read
     instance_eval(code, recipe)
-
-  rescue => e
-    STDERR.puts "Exception: #{e}\n\n#{e.backtrace * "\n"}"
-    raise
   end
 
   recipe :execute_user_recipe
@@ -78,6 +75,7 @@ class Root < ::ShadowPuppet::Manifest
     evaluate_recipes
     ! apply.any_failed?
   rescue Exception => e
+    STDERR.puts "\n\nException: #{e}\n#{e.backtrace * "\n"}"
     false
   ensure
     @executed = true
