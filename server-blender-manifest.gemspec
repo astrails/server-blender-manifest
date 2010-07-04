@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Vitaly Kushner"]
-  s.date = %q{2010-06-22}
+  s.date = %q{2010-07-04}
   s.description = %q{This gem is part of the server-blender family (http://astrails.com/opensource/server-blender)
 It contains server-side root manifest implementation for blender recipes. See server-blender for more information.
 }
@@ -25,7 +25,6 @@ It contains server-side root manifest implementation for blender recipes. See se
      "Rakefile",
      "VERSION",
      "lib/blender/manifest.rb",
-     "lib/blender/manifest/init.rb",
      "lib/blender/manifest/mixer.rb",
      "lib/blender/manifest/nodes.rb",
      "lib/blender/manifest/roles.rb",
