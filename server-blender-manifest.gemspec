@@ -30,6 +30,7 @@ It contains server-side root manifest implementation for blender recipes. See se
      "lib/blender/manifest/roles.rb",
      "lib/blender/manifest/root.rb",
      "lib/puppet/darwinport_fix.rb",
+     "lib/puppet/dmgapp.rb",
      "server-blender-manifest.gemspec",
      "spec/spec.opts",
      "spec/spec_helper.rb"

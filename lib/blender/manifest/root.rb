@@ -1,6 +1,7 @@
 require 'ruby-debug'
 require 'shadow_puppet'
 require 'puppet/darwinport_fix'
+require 'puppet/dmgapp'
 
 module Blender
   module Manifest; end
