@@ -13,6 +13,9 @@ It contains server-side root manifest implementation for blender recipes. See se
     gem.email = "vitaly@astrails.com"
     gem.homepage = "http://astrails.com/opensource/server-blender"
     gem.authors = ["Vitaly Kushner"]
+
+    gem.add_dependency "activesupport", "= 2.3.5"
+
     gem.add_development_dependency "rspec", ">= 1.2.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
