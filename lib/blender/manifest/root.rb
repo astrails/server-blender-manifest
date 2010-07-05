@@ -1,5 +1,5 @@
 # latest activesupport  producess a TON of warnings. use 2.3.5
-gem 'activeresource', '2.3.5'
+gem 'activesupport', '2.3.5'
 require 'shadow_puppet'
 require 'puppet/darwinport_fix'
 require 'puppet/dmgapp'
