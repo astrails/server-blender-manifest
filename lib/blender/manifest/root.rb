@@ -15,6 +15,12 @@ require 'blender/manifest/nodes'
 require 'blender/manifest/roles'
 require 'blender/manifest/mixer'
 
+# FIXME: this whole setup/regular execution is ugly. need to think of a better scheme
+# Motivation behind the 'setup' thing:
+# - on some platforms we need to do stuff *before* any of the real recipes are running
+#   an example is Darwin where you need to change the default package provider
+#   to 'ports' BEFORE you define any package resources
+# - so we create 2 manifests. one that executes the 'setup' recipes, and another one that executes the rest.
 class Root < ::ShadowPuppet::Manifest
   include Blender::Manifest::Nodes
   include Blender::Manifest::Roles
@@ -37,7 +43,10 @@ class Root < ::ShadowPuppet::Manifest
     if :setup == @stage
       # run OS specific setup recipe.
       m = "#{os.downcase}_setup"
-      return send(m) if respond_to?(m)
+      send(m) if respond_to?(m)
+      # run gemeric setup
+      send(:setup) if respond_to?(:setup)
+      return
     end
 
     raise "no RECIPE to execute" unless recipe = ENV['RECIPE']
