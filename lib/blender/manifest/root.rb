@@ -101,4 +101,4 @@ include Blender::Manifest::Mixer
 $: << "recipes"
 
 # add all recipes in the cookbooks directory to the path
-$:.concat Dir["cookbooks/*/recipes"]
+$:.concat Dir["cookbooks/*/lib"]

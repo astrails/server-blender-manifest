@@ -1,4 +1,15 @@
 module Blender::Manifest::Mixer
+  # installs cookbook gems if needed and loads them into the environment
+  def cookbook(cb, version)
+    # skip cookbooks that are unapcked into the /cookbooks/ directory
+    return if File.directory?("cookbooks/#{cb}/files") || File.directory?("cookbooks/#{cb}/lib")
+
+    gem cb, version
+  rescue Gem::LoadError
+    system "gem install --no-ri --no-rdoc #{cb} -v#{version}"
+    gem cb, version
+  end
+
   # mixes recipe module
   #
   # The purpose is to make the mixing of recipes cleaner and easier on the eyes :)
