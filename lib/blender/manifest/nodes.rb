@@ -40,10 +40,10 @@ module Blender::Manifest::Nodes
 
   # resolves host name using 'host' executable
   # @return host's IP by its name or nil if not found
+  require 'resolv'
   def host_ip(name)
     return nil unless name && !name.empty?
-    res = `host #{name}`.split("\n").grep(/has address/).first
-    res && res.split.last
+    Resolv.getaddress(name) rescue nil
   end
 
   # define node and conditionally execute code block only on the specific node
